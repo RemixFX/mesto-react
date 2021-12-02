@@ -2,6 +2,7 @@
   "name": "mesto-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://remixfx.github.io/mesto-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -18,11 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RemixFX/mesto-react.git"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
