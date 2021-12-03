@@ -103,7 +103,7 @@ function App() {
       setCards((state) => state.filter((c) => c._id !== forDeleteCard._id))
     })
       .catch(err => console.log(err))
-      .finally(() => closeAllPopups());
+      closeAllPopups();
   }
 
   // Единая функция закрытия попапов

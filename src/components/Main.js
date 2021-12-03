@@ -5,7 +5,6 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function Main(props) {
   const currentUser = React.useContext(CurrentUserContext);
-
   return (
     <main className="content">
       <section className="profile">
@@ -26,10 +25,10 @@ function Main(props) {
       <section className="elements">
         <TransitionGroup component={null}>
           {props.cards.map((card) =>
-            <CSSTransition classNames="element-animated" timeout={700} key={card._id}>
-              <Card key={card._id} card={card} onCardClick={props.onCardClick}
+            <CSSTransition  classNames="element-animated" timeout={700} key={card._id} >
+              <Card card={card} onCardClick={props.onCardClick}
                 onCardLike={props.onCardLike} onCardDelete={props.onCardDelete} />
-            </CSSTransition>
+            </CSSTransition >
           )}
         </TransitionGroup>
       </section>
