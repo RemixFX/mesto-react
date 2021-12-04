@@ -101,9 +101,9 @@ function App() {
 
     api.deleteCard(forDeleteCard._id).then(() => {
       setCards((state) => state.filter((c) => c._id !== forDeleteCard._id))
+      closeAllPopups();
     })
       .catch(err => console.log(err))
-    closeAllPopups();
   }
 
   // Единая функция закрытия попапов
