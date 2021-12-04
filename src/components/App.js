@@ -103,7 +103,7 @@ function App() {
       setCards((state) => state.filter((c) => c._id !== forDeleteCard._id))
     })
       .catch(err => console.log(err))
-      closeAllPopups();
+    closeAllPopups();
   }
 
   // Единая функция закрытия попапов
@@ -148,23 +148,29 @@ function App() {
 
   // Обновление текстовых полей профиля
   function handleUpdateUser(userInfo) {
-    api.patchUserData(userInfo).then(res => setCurrentUser(res))
+    api.patchUserData(userInfo).then(res => {
+      setCurrentUser(res)
+      closeAllPopups()
+    })
       .catch((err) => console.log(err));
-    closeAllPopups()
   }
 
   // Обновление аватара профиля
   function handleUpdateAvatar(avatar) {
-    api.patchUserAvatar(avatar).then(res => setCurrentUser(res))
+    api.patchUserAvatar(avatar).then(res => {
+      setCurrentUser(res)
+      closeAllPopups()
+    })
       .catch((err) => console.log(err));
-    closeAllPopups()
   }
 
   // Добавление новой карточки
   function handleAddPlaceSubmit(cardData) {
-    api.uploadNewCard(cardData).then(newCard => setCards([newCard, ...cards]))
+    api.uploadNewCard(cardData).then(newCard => {
+      setCards([newCard, ...cards])
+      closeAllPopups()
+    })
       .catch((err) => console.log(err));
-    closeAllPopups()
   }
 
   return (
